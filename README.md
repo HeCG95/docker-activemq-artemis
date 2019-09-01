@@ -35,7 +35,7 @@ The result is
 docker-activemq-artemis_activemq-artemis_1   /docker-entrypoint.sh arte ...   Up      1883/tcp, 5445/tcp, 5672/tcp, 61613/tcp, 0.0.0.0:61616->61616/tcp, 0.0.0.0:8161->8161/tcp, 9404/tcp
 ```
 
-+ (3) View activemq management console on : http://yourhost:8161/console/login, with username - artemis, with password - artemis.
++ (3) View activemq management console on : http://hostname:8161/console/login, with username - artemis, with password - artemis.
 
 
 [1]: https://www.docker.com
