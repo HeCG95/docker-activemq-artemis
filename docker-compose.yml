@@ -1,0 +1,28 @@
+version: '2.3'
+networks:
+  bridge:
+    driver: bridge
+services:
+
+  activemq-artemis:
+    image: vromero/activemq-artemis:2.9.0-alpine
+    restart: "no"
+    mem_limit: 512m
+    networks:
+    - bridge
+    environment:
+      TZ: "Asia/Shanghai"
+      TIME_ZONE: "Asia/Shanghai"
+      ARTEMIS_USERNAME: "artemis"
+      ARTEMIS_PASSWORD: "artemis"
+      ARTEMIS_MIN_MEMORY: "512M"
+      ARTEMIS_MAX_MEMORY: "512M"
+      ARTEMIS_PERF_JOURNAL: "AUTO"
+    volumes:
+    - ./localtime:/usr/share/zoneinfo/Asia/Shanghai:ro
+    - ./localtime:/etc/localtime:ro
+    - ./timezone:/etc/timezone:ro
+    ports: 
+    - "8161:8161"
+    - "61616:61616"
+
